@@ -1,4 +1,4 @@
-import { download } from '@goatjs/node/download';
+import { download } from '@goatjs/download';
 import path from 'node:path';
 
 const modernNormalizerUrl = 'https://raw.githubusercontent.com/sindresorhus/modern-normalize/refs/heads/main/modern-normalize.css';
