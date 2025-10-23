@@ -1,5 +1,8 @@
 import { download } from '@goatjs/download';
 import path from 'node:path';
+import { checkGitStatus } from '@goatjs/node/dev/git';
+
+await checkGitStatus();
 
 const modernNormalizerUrl = 'https://raw.githubusercontent.com/sindresorhus/modern-normalize/refs/heads/main/modern-normalize.css';
 const tailwindPreflightUrl = 'https://raw.githubusercontent.com/tailwindlabs/tailwindcss/refs/heads/main/packages/tailwindcss/preflight.css';
