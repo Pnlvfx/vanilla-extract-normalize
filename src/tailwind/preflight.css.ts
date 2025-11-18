@@ -18,11 +18,7 @@ globalStyle('html, :host', {
   WebkitTapHighlightColor: 'transparent',
 });
 
-globalStyle('hr', {
-  height: 0,
-  color: 'inherit',
-  borderTopWidth: '1px',
-});
+globalStyle('hr', { height: 0, color: 'inherit', borderTopWidth: '1px' });
 
 globalStyle('abbr[title]', { textDecoration: 'underline dotted' });
 
@@ -31,13 +27,8 @@ globalStyle('h1, h2, h3, h4, h5, h6', {
   fontWeight: 'inherit',
 });
 
-globalStyle('a', {
-  color: 'inherit',
-  textDecoration: 'inherit',
-});
+globalStyle('a', { color: 'inherit', textDecoration: 'inherit' });
 
-globalStyle('b, strong', {
-  fontWeight: 'bolder',
-});
+globalStyle('b, strong', { fontWeight: 'bolder' });
 
 // TODO [2025-11-20] this must be ended
