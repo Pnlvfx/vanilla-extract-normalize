@@ -31,4 +31,4 @@ globalStyle('a', { color: 'inherit', textDecoration: 'inherit' });
 
 globalStyle('b, strong', { fontWeight: 'bolder' });
 
-// TODO [2025-11-20] this must be ended
+// TODO [2026-11-20] this is not ended

@@ -1,6 +1,6 @@
 import { download } from '@goatjs/download';
 import path from 'node:path';
-import { checkGitStatus } from '@goatjs/node/dev/git';
+import { checkGitStatus } from '@goatjs/dbz/git';
 
 await checkGitStatus();
 
