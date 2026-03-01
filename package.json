@@ -35,15 +35,15 @@
   ],
   "devDependencies": {
     "@goatjs/dbz": "^1.51.0",
-    "@goatjs/download": "^1.51.0",
-    "@goatjs/node": "^1.51.0",
-    "@goatjs/node-eslint": "^1.32.0",
-    "@goatjs/rimraf": "^1.51.0",
-    "@goatjs/typescript-config": "1.51.0",
-    "@types/node": "^25.0.3",
+    "@goatjs/download": "^1.71.0",
+    "@goatjs/node": "^1.71.0",
+    "@goatjs/node-eslint": "^1.45.0",
+    "@goatjs/rimraf": "^1.71.0",
+    "@goatjs/typescript-config": "1.71.0",
+    "@types/node": "^25.3.3",
     "@vanilla-extract/css": "^1.18.0",
-    "eslint": "^9.39.2",
-    "prettier": "^3.7.4",
+    "eslint": "^10.0.2",
+    "prettier": "^3.8.1",
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
