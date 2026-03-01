@@ -1,56 +1,199 @@
-Vanilla Extract Normalize
-Inspired by modern-normalize, this CSS normalization utility is built specifically for Vanilla Extract projects.
-Overview
-This normalize implementation provides a consistent foundation for styling across different browsers while leveraging Vanilla Extract's globalStyle function. It addresses common browser inconsistencies and sets sensible defaults for modern web development.
-Features
+# 🧼 Vanilla Extract Normalize
 
-Box Model Normalization: Sets box-sizing: border-box on all elements and pseudo-elements
-Typography Standards: Establishes consistent font families and sizing across system fonts
-Form Element Consistency: Normalizes appearance and behavior of form controls
-WebKit Compatibility: Handles WebKit-specific styling issues
-Modern Browser Focus: Optimized for contemporary browser environments
+> A modern CSS normalization library built specifically for [Vanilla Extract](https://vanilla-extract.style/) projects.
 
-What It Does
-Universal Box Sizing
-Sets box-sizing: border-box for all elements (_, _:after, \*:before) to ensure predictable sizing behavior.
-HTML & Body Defaults
+[![npm version](https://img.shields.io/npm/v/vanilla-extract-normalize.svg)](https://www.npmjs.com/package/vanilla-extract-normalize)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Configures a modern system font stack for optimal cross-platform typography
-Sets consistent line-height and text size adjustment
-Removes default body margins
-Establishes 4-space tab sizing
+---
 
-Typography Normalization
+## 📦 Installation
 
-Makes bold elements (b, strong) consistently bolder
-Standardizes monospace fonts for code elements (pre, code, kbd, samp)
-Adjusts sizing for small text and subscript/superscript elements
+```bash
+npm install vanilla-extract-normalize
+# or
+yarn add vanilla-extract-normalize
+```
 
-Form Controls
+> **Note**: This package requires `@vanilla-extract/css` as a peer dependency.
 
-Inherits font properties from parent elements
-Normalizes sizing and spacing
-Handles WebKit appearance issues for buttons and search inputs
-Ensures consistent baseline alignment
+---
 
-Browser-Specific Fixes
+## 🚀 Usage
 
-Addresses WebKit spin button styling
-Normalizes search input appearance
-Fixes file upload button styling
-Ensures proper summary element display
+This package provides **two normalization options**:
 
-Usage
-Simply import this file in your Vanilla Extract project to apply the normalization:
-The global styles will be automatically applied when your CSS is built.
+| Import Path                                    | Description                                                 |
+| ---------------------------------------------- | ----------------------------------------------------------- |
+| `vanilla-extract-normalize/recommended`        | Modern-normalize inspired base (lighter, minimal)           |
+| `vanilla-extract-normalize/tailwind/preflight` | Complete Tailwind preflight recreation (more comprehensive) |
 
-Why Vanilla Extract?
-This implementation takes advantage of Vanilla Extract's type-safe CSS-in-JS approach while maintaining the benefits of CSS normalization. It provides:
+### Option 1: Recommended (modern-normalize style)
 
-Type Safety: Full TypeScript support for all CSS properties
-Build-Time Generation: CSS is extracted at build time, not runtime
-Modern Workflow: Integrates seamlessly with modern JavaScript tooling
-Maintainability: Easy to modify and extend with full IDE support
+```ts
+// app.css.ts
+import 'vanilla-extract-normalize/recommended';
 
-Browser Support
-Designed for modern browsers with focus on current versions of Chrome, Firefox, Safari, and Edge. The normalization addresses contemporary browser inconsistencies while maintaining lean, efficient CSS output.
+// Your styles here...
+export const container = style({
+  padding: '1rem',
+});
+```
+
+This is a direct port of [modern-normalize](https://github.com/sindresorhus/modern-normalize) — a lightweight, minimal normalization that only fixes browser inconsistencies without adding extra opinions.
+
+### Option 2: Tailwind Preflight
+
+```ts
+// app.css.ts
+import 'vanilla-extract-normalize/tailwind/preflight';
+
+// Your styles here...
+export const container = style({
+  padding: '1rem',
+});
+```
+
+This is a **complete 1:1 recreation of Tailwind's preflight** (`@preflight`). It's more opinionated and comprehensive, matching exactly what Tailwind applies under the hood.
+
+---
+
+## ✨ Features Comparison
+
+| Feature                        |         Recommended          |     Tailwind Preflight     |
+| ------------------------------ | :--------------------------: | :------------------------: | --- |
+| **Box Sizing**                 | `border-box` on all elements |             ✅             | ✅  |
+| **Margin/Padding Reset**       |              ❌              |             ✅             |
+| **Border Reset**               |              ❌              |             ✅             |
+| **System Font Stack**          |        ✅ (system-ui)        |   ✅ (Tailwind's stack)    |
+| **Form Element Normalization** |            Basic             |       Comprehensive        |
+| **Button Appearance Reset**    |            Basic             |            Full            |
+| **File Input Styling**         |              ❌              |             ✅             |
+| **Placeholder Styling**        |              ❌              |             ✅             |
+| **Hidden Attribute Support**   |              ❌              | ✅ (`until-found` support) |
+| **Interactive Cursors**        |              ❌              |             ✅             |
+| **Media Element Defaults**     |              ❌              |             ✅             |
+| **List Style Reset**           |              ❌              |             ✅             |
+| **Table Border Inheritance**   |              ✅              |             ✅             |
+| **Bundle Size**                |          🟢 Smaller          |         🟡 Larger          |
+
+---
+
+## 📋 Detailed Breakdown
+
+### 🎨 Recommended (modern-normalize style)
+
+Located at `src/recommended.css.ts`, this is a faithful port of [modern-normalize](https://github.com/sindresorhus/modern-normalize):
+
+```ts
+// What it includes:
+- ✅ Universal box-sizing: border-box
+- ✅ HTML/body font normalization
+- ✅ Bold element consistency
+- ✅ Monospace font stack for code elements
+- ✅ Sub/sup positioning
+- ✅ Table border color inheritance
+- ✅ Form element font inheritance
+- ✅ Button appearance normalization
+- ✅ Progress element alignment
+- ✅ WebKit spin button removal
+- ✅ Search input normalization
+- ✅ File upload button styling
+- ✅ Summary display as list-item
+```
+
+### 🎯 Tailwind Preflight
+
+Located at `src/tailwind/preflight.css.ts`, this is a **complete 1:1 recreation of Tailwind's preflight**:
+
+```ts
+// What it includes (everything from recommended, plus):
+- ✅ Margin/padding reset on all elements
+- ✅ Border reset to '0 solid'
+- ✅ Tab size: 4
+- ✅ Webkit tap highlight color: transparent
+- ✅ HR element normalization
+- ✅ Abbr[title] underline dotted
+- ✅ Heading font size/weight inheritance
+- ✅ Link color/text decoration inheritance
+- ✅ Small text: 80%
+- ✅ Textarea vertical resize only
+- ✅ Placeholder opacity and color
+- ✅ Disabled state cursor: default
+- ✅ Button/interactive elements cursor: pointer
+- ✅ Media elements: block + vertical-align: middle
+- ✅ Images/video: max-width: 100%, height: auto
+- ✅ List style: none
+- ✅ Hidden attribute with until-found support
+- ✅ :host selector support
+- ✅ ::backdrop pseudo-element support
+- ✅ ::file-selector-button support
+- ✅ :where() selector usage
+- ✅ Firefox focus ring handling
+- ✅ Firefox :-moz-ui-invalid shadow removal
+```
+
+---
+
+## 🎯 When to Use Which?
+
+### Choose **Recommended** if:
+
+- ✅ You want a minimal, lightweight normalization
+- ✅ You prefer to add your own resets incrementally
+- ✅ You're already using modern-normalize in CSS projects
+- ✅ Bundle size is critical
+
+### Choose **Tailwind Preflight** if:
+
+- ✅ You're migrating from Tailwind CSS
+- ✅ You want the exact same base as Tailwind
+- ✅ You prefer a more opinionated, comprehensive reset
+- ✅ You want to avoid writing additional resets
+- ✅ You need features like placeholder styling and file input normalization
+
+---
+
+## 🏗️ Project Structure
+
+```
+vanilla-extract-normalize/
+├── src/
+│   ├── recommended.css.ts        # Modern-normalize style (lightweight)
+│   └── tailwind/
+│       └── preflight.css.ts      # Complete Tailwind preflight recreation
+├── dist/                         # Compiled output
+├── README.md                      # This file
+└── package.json
+```
+
+---
+
+## 🌐 Browser Support
+
+| Browser        | Version |
+| -------------- | ------- |
+| Chrome         | ✅ 60+  |
+| Firefox        | ✅ 52+  |
+| Safari         | ✅ 12+  |
+| Edge           | ✅ 79+  |
+| iOS Safari     | ✅ 12+  |
+| Android Chrome | ✅ 90+  |
+
+---
+
+## 📄 License
+
+MIT © [Simone Gauli](https://github.com/simonegauli)
+
+---
+
+## 🙏 Acknowledgments
+
+- **[modern-normalize](https://github.com/sindresorhus/modern-normalize)** by Sindre Sorhus — for the recommended base
+- **[Tailwind CSS](https://tailwindcss.com/)** — for the preflight implementation
+- **[Vanilla Extract](https://vanilla-extract.style/)** — for the amazing zero-runtime CSS-in-JS library
+
+---
+
+_Made with ❤️ for the Vanilla Extract community_
