@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { download } from '@goatjs/download';
 import path from 'node:path';
 import { checkGitStatus } from '@goatjs/dbz/git';
@@ -10,3 +11,4 @@ const referencePath = path.join(process.cwd(), '.reference');
 
 await download(modernNormalizerUrl, { directory: referencePath });
 await download(tailwindPreflightUrl, { directory: referencePath });
+console.log('References updated');
