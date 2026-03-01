@@ -31,4 +31,67 @@ globalStyle('a', { color: 'inherit', textDecoration: 'inherit' });
 
 globalStyle('b, strong', { fontWeight: 'bolder' });
 
-// TODO [2026-11-20] this is not ended
+globalStyle('code, kbd, samp, pre', { fontFamily: 'ui-monospace, monospace', fontSize: '1em' });
+
+globalStyle('small', { fontSize: '80%' });
+
+globalStyle('sub, sup', {
+  fontSize: '75%',
+  lineHeight: 0,
+  position: 'relative',
+  verticalAlign: 'baseline',
+});
+
+globalStyle('sub', { bottom: '-0.25em' });
+
+globalStyle('sup', { top: '-0.5em' });
+
+globalStyle('table', {
+  textIndent: 0,
+  borderColor: 'inherit',
+  borderCollapse: 'collapse',
+});
+
+globalStyle('button, input, optgroup, select, textarea, ::file-selector-button', {
+  font: 'inherit',
+  fontFeatureSettings: 'inherit',
+  fontVariationSettings: 'inherit',
+  letterSpacing: 'inherit',
+  color: 'inherit',
+  background: 'transparent',
+});
+
+globalStyle("button, input:where([type='button']), input:where([type='reset']), input:where([type='submit']), ::file-selector-button", {
+  appearance: 'button',
+});
+
+globalStyle(':-moz-focusring', { outline: 'auto' });
+
+globalStyle(':-moz-ui-invalid', { boxShadow: 'none' });
+
+globalStyle('progress', { verticalAlign: 'baseline' });
+
+globalStyle('::-webkit-inner-spin-button, ::-webkit-outer-spin-button', { height: 'auto' });
+
+globalStyle('::-webkit-search-decoration', { appearance: 'textfield' });
+
+globalStyle('summary', { display: 'list-item' });
+
+globalStyle('ol, ul, menu', { listStyle: 'none' });
+
+globalStyle('textarea', { resize: 'vertical' });
+
+globalStyle('input::placeholder, textarea::placeholder', { opacity: 1, color: 'color-mix(in srgb, currentColor 50%, transparent)' });
+
+globalStyle("button, [role='button']", { cursor: 'pointer' });
+
+globalStyle(':disabled', { cursor: 'default' });
+
+globalStyle('img, svg, video, canvas, audio, iframe, embed, object', {
+  display: 'block',
+  verticalAlign: 'middle',
+});
+
+globalStyle('img, video', { maxWidth: '100%', height: 'auto' });
+
+globalStyle("[hidden]:not([hidden='until-found'])", { display: 'none' });
