@@ -1,9 +1,11 @@
 /* eslint-disable no-console */
 import { download } from '@goatjs/download';
 import path from 'node:path';
-import { checkGitStatus } from '@goatjs/dbz/git';
+import { dbz } from '@goatjs/dbz';
+import { createGitClient } from '@goatjs/node/git';
 
-await checkGitStatus();
+const git = createGitClient();
+await dbz.checkGitStatus(git);
 
 const modernNormalizerUrl = 'https://raw.githubusercontent.com/sindresorhus/modern-normalize/refs/heads/main/modern-normalize.css';
 const tailwindPreflightUrl = 'https://raw.githubusercontent.com/tailwindlabs/tailwindcss/refs/heads/main/packages/tailwindcss/preflight.css';

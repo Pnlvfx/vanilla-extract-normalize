@@ -1,16 +1,17 @@
 {
   "name": "vanilla-extract-normalize",
-  "description": "",
   "version": "1.3.0",
-  "author": {
-    "email": "simonegauli@gmail.com",
-    "name": "Simone Gauli"
-  },
+  "description": "Normalizer",
   "repository": {
     "type": "git",
     "url": "https://github.com/Pnlvfx/vanilla-extract-normalize.git"
   },
   "license": "MIT",
+  "author": {
+    "email": "simonegauli@gmail.com",
+    "name": "Simone Gauli"
+  },
+  "sideEffects": false,
   "type": "module",
   "exports": {
     "./*": {
@@ -18,36 +19,34 @@
       "import": "./dist/*.js"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "tsc": "tsc --noEmit",
-    "test": "",
-    "lint": "eslint",
     "build": "rimraf dist && eslint && tsc -p tsconfig.build.json",
+    "lint": "eslint",
     "prepack": "yarn build",
     "prepublishOnly": "yarn test && eslint",
-    "update": "yarn upgrade-interactive",
-    "reference": "node tools/reference.ts"
+    "reference": "node tools/reference.ts",
+    "tsc": "tsc --noEmit",
+    "update": "yarn upgrade-interactive"
   },
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
   "devDependencies": {
-    "@goatjs/dbz": "^1.51.0",
-    "@goatjs/download": "^1.71.0",
-    "@goatjs/node": "^1.71.0",
-    "@goatjs/node-eslint": "^1.45.0",
-    "@goatjs/rimraf": "^1.71.0",
-    "@goatjs/typescript-config": "1.71.0",
-    "@types/node": "^25.3.3",
-    "@vanilla-extract/css": "^1.18.0",
-    "eslint": "^10.0.2",
-    "prettier": "^3.8.1",
+    "@eslint/config-helpers": "^0.7.0",
+    "@goatjs/dbz": "^2.64.0",
+    "@goatjs/download": "^2.32.0",
+    "@goatjs/node": "^2.33.0",
+    "@goatjs/node-eslint": "^3.16.0",
+    "@goatjs/rimraf": "^2.12.0",
+    "@goatjs/typescript-config": "2.2.0",
+    "@types/node": "^26.2.0",
+    "@vanilla-extract/css": "^1.21.2",
+    "eslint": "^10.8.1",
+    "prettier": "^3.9.6",
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "@vanilla-extract/css": "*"
   },
-  "packageManager": "yarn@4.12.0+sha512.f45ab632439a67f8bc759bf32ead036a1f413287b9042726b7cc4818b7b49e14e9423ba49b18f9e06ea4941c1ad062385b1d8760a8d5091a1a31e5f6219afca8"
+  "packageManager": "yarn@4.18.0+sha512.fcb8716fe7cd0eece141ffc18b92193a9df9204c1ba83189c288835223fc0bbe64af473bab0d5e9927a7daeb5caf2bb07eb2787cc9338ca040ea125f2a1f2f7e"
 }
