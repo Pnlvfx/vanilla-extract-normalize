@@ -11,6 +11,5 @@ const modernNormalizerUrl = 'https://raw.githubusercontent.com/sindresorhus/mode
 const tailwindPreflightUrl = 'https://raw.githubusercontent.com/tailwindlabs/tailwindcss/refs/heads/main/packages/tailwindcss/preflight.css';
 const referencePath = path.join(process.cwd(), '.reference');
 
-await download(modernNormalizerUrl, { directory: referencePath });
-await download(tailwindPreflightUrl, { directory: referencePath });
+await Promise.all([download(modernNormalizerUrl, { directory: referencePath }), download(tailwindPreflightUrl, { directory: referencePath })]);
 console.log('References updated');

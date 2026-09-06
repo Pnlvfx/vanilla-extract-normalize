@@ -12,7 +12,7 @@
 ```bash
 npm install vanilla-extract-normalize
 # or
-yarn add vanilla-extract-normalize
+pnpm add vanilla-extract-normalize
 ```
 
 > **Note**: This package requires `@vanilla-extract/css` as a peer dependency.
@@ -60,22 +60,22 @@ This is a **complete 1:1 recreation of Tailwind's preflight** (`@preflight`). It
 
 ## ✨ Features Comparison
 
-| Feature                        |         Recommended          |     Tailwind Preflight     |
+| Feature | Recommended | Tailwind Preflight |
 | ------------------------------ | :--------------------------: | :------------------------: | --- |
-| **Box Sizing**                 | `border-box` on all elements |             ✅             | ✅  |
-| **Margin/Padding Reset**       |              ❌              |             ✅             |
-| **Border Reset**               |              ❌              |             ✅             |
-| **System Font Stack**          |        ✅ (system-ui)        |   ✅ (Tailwind's stack)    |
-| **Form Element Normalization** |            Basic             |       Comprehensive        |
-| **Button Appearance Reset**    |            Basic             |            Full            |
-| **File Input Styling**         |              ❌              |             ✅             |
-| **Placeholder Styling**        |              ❌              |             ✅             |
-| **Hidden Attribute Support**   |              ❌              | ✅ (`until-found` support) |
-| **Interactive Cursors**        |              ❌              |             ✅             |
-| **Media Element Defaults**     |              ❌              |             ✅             |
-| **List Style Reset**           |              ❌              |             ✅             |
-| **Table Border Inheritance**   |              ✅              |             ✅             |
-| **Bundle Size**                |          🟢 Smaller          |         🟡 Larger          |
+| **Box Sizing** | `border-box` on all elements | ✅ | ✅ |
+| **Margin/Padding Reset** | ❌ | ✅ |
+| **Border Reset** | ❌ | ✅ |
+| **System Font Stack** | ✅ (system-ui) | ✅ (Tailwind's stack) |
+| **Form Element Normalization** | Basic | Comprehensive |
+| **Button Appearance Reset** | Basic | Full |
+| **File Input Styling** | ❌ | ✅ |
+| **Placeholder Styling** | ❌ | ✅ |
+| **Hidden Attribute Support** | ❌ | ✅ (`until-found` support) |
+| **Interactive Cursors** | ❌ | ✅ |
+| **Media Element Defaults** | ❌ | ✅ |
+| **List Style Reset** | ❌ | ✅ |
+| **Table Border Inheritance** | ✅ | ✅ |
+| **Bundle Size** | 🟢 Smaller | 🟡 Larger |
 
 ---
 
