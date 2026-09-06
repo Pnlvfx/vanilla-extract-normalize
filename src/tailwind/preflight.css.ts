@@ -12,7 +12,7 @@ globalStyle('html, :host', {
   WebkitTextSizeAdjust: '100%',
   tabSize: 4,
   fontFamily:
-    "--theme(--default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji')",
+    "--theme(--default-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji')",
   fontFeatureSettings: '--theme(--default-font-feature-settings, normal)',
   fontVariationSettings: '--theme(--default-font-variation-settings, normal)',
   WebkitTapHighlightColor: 'transparent',
@@ -65,7 +65,7 @@ globalStyle("button, input:where([type='button']), input:where([type='reset']), 
   appearance: 'button',
 });
 
-globalStyle(':-moz-focusring', { outline: 'auto' });
+globalStyle(':-moz-focusring:where(:not(iframe))', { outline: 'auto' });
 
 globalStyle(':-moz-ui-invalid', { boxShadow: 'none' });
 
