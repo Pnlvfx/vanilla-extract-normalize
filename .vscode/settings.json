@@ -2,5 +2,6 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.quickSuggestions": {
     "strings": "on"
-  }
+  },
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }
