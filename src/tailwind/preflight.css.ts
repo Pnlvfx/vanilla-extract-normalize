@@ -1,4 +1,8 @@
-import { globalStyle } from '@vanilla-extract/css';
+import { createVar, fallbackVar, globalStyle } from '@vanilla-extract/css';
+
+export const defaultFontFamily = createVar('default-font-family');
+export const defaultFontFeatureSettings = createVar('default-font-feature-settings');
+export const defaultFontVariationSettings = createVar('default-font-variation-settings');
 
 globalStyle('*, ::after, ::before, ::backdrop, ::file-selector-button', {
   boxSizing: 'border-box',
@@ -12,9 +16,9 @@ globalStyle('html, :host', {
   WebkitTextSizeAdjust: '100%',
   tabSize: 4,
   fontFamily:
-    "--theme(--default-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji')",
-  fontFeatureSettings: '--theme(--default-font-feature-settings, normal)',
-  fontVariationSettings: '--theme(--default-font-variation-settings, normal)',
+    fallbackVar(defaultFontFamily, "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"),
+  fontFeatureSettings: fallbackVar(defaultFontFeatureSettings, 'normal'),
+  fontVariationSettings: fallbackVar(defaultFontVariationSettings, 'normal'),
   WebkitTapHighlightColor: 'transparent',
 });
 
