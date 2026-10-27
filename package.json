@@ -11,9 +11,7 @@
     "email": "simonegauli@gmail.com",
     "name": "Simone Gauli"
   },
-  "sideEffects": [
-    "**/*.css.js"
-  ],
+  "sideEffects": true,
   "type": "module",
   "exports": {
     "./*": {
