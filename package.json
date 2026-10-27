@@ -12,7 +12,7 @@
     "name": "Simone Gauli"
   },
   "sideEffects": [
-    "./dist/**/*.css.js"
+    "**/*.css.js"
   ],
   "type": "module",
   "exports": {
